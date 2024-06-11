@@ -1,0 +1,20 @@
+{
+    "search.exclude": {
+        "**/.git": true,
+        "**/node_modules": true,
+        "**/build": true
+    },
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit"
+    },
+    "prettier.useEditorConfig": false,
+    "eslint.codeActionsOnSave.rules": [
+        "simple-import-sort/imports",
+        "simple-import-sort/exports",
+        "@typescript-eslint/consistent-type-imports",
+        "unused-imports/no-unused-imports"
+    ],
+    "eslint.workingDirectories": [{ "mode": "auto" }],
+    "eslint.format.enable": true
+}

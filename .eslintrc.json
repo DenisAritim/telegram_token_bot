@@ -1,0 +1,83 @@
+{
+    "extends": [
+        "plugin:prettier/recommended",
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-type-checked"
+    ],
+    "overrides": [
+        // Configuration for TypeScript files
+        {
+            "files": ["**/*.ts"],
+            "plugins": [
+                "prettier",
+                "@typescript-eslint",
+                "eslint-plugin-node",
+                "eslint-plugin-prettier",
+                "eslint-plugin-security",
+                "eslint-plugin-simple-import-sort",
+                "eslint-plugin-unused-imports",
+                "simple-import-sort",
+                "unused-imports",
+                "@typescript-eslint",
+                "eslint-plugin-import"
+            ],
+            "parserOptions": {
+                "project": "./tsconfig.json",
+                "ecmaVersion": 2023,
+                "sourceType": "module",
+                "ecmaFeatures": {
+                    // Allows for the parsing of JSX
+                    "jsx": false
+                }
+            },
+            "rules": {
+                "no-underscore-dangle": "off",
+                "@typescript-eslint/comma-dangle": "off", // Avoid conflict rule between Eslint and Prettier
+                "@typescript-eslint/consistent-type-imports": "error", // Ensure `import type` is used when it's necessary
+                "@typescript-eslint/no-unused-vars": "off", // Avoid conflict rule between Eslint plugins
+                "import/extensions": "off",
+                "import/prefer-default-export": "off", // Named export is easier to refactor automatically
+                "no-nested-ternary": "warn",
+                "no-param-reassign": [
+                    "error",
+                    {
+                        "props": false
+                    }
+                ],
+                "no-plusplus": [
+                    "error",
+                    {
+                        "allowForLoopAfterthoughts": true
+                    }
+                ],
+                "no-shadow": "off",
+                "@typescript-eslint/no-shadow": "error",
+                "object-shorthand": ["error", "always"],
+                "prettier/prettier": [
+                    "error",
+                    {
+                        "endOfLine": "auto",
+                        "bracketSpacing": true,
+                        "printWidth": 120,
+                        "semi": false,
+                        "singleQuote": true,
+                        "tabWidth": 4,
+                        "trailingComma": "all"
+                    }
+                ],
+                "simple-import-sort/imports": "error",
+                "simple-import-sort/exports": "error",
+                "unused-imports/no-unused-imports": "error",
+                "unused-imports/no-unused-vars": [
+                    "warn",
+                    {
+                        "argsIgnorePattern": "^_"
+                    }
+                ],
+                "no-undef": "off",
+                "no-unused-vars": "off"
+            }
+        }
+    ]
+}

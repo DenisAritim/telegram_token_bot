@@ -1,0 +1,16 @@
+{
+    "functions": {
+        "api/bot.ts": {
+            "memory": 1024,
+            "maxDuration": 20
+        },
+        "api/webhook.ts": {
+            "memory": 128,
+            "maxDuration": 5
+        }
+    },
+    "installCommand": "yarn",
+    "buildCommand": "yarn build",
+    "devCommand": "yarn start",
+    "outputDirectory": "out"
+}
